@@ -4,10 +4,9 @@ const search = document.getElementById("Search");
 
 const expensiveBtn = document.getElementById("expensive");
 
-let favorites = [];
 
 
-function displayProducts(items){
+function displayProducts(items = products){
 
 container.innerHTML = "";
 
@@ -19,7 +18,7 @@ container.innerHTML += `
 
 <h2>${product.title}</h2>
 
-<p>$${product.price}</p>
+<p>${product.price}</p>
 
 <button onclick="favorite(${product.id})">
 Favorite
@@ -34,6 +33,8 @@ Favorite
 }
 
 displayProducts(products);
+
+let favorites = [];
 
 
 function favorite(id){

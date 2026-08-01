@@ -33,14 +33,12 @@ Favorite
 }
 
 displayProducts(products);
-
 let favorites = [];
-
 function favorite(id){
 
-const item = products.find(product => product.id = id);
+const product = products.find(product => product.id === id);
 
-favorites.push(item);
+favorites.push(product);
 
 document.getElementById("favCount").innerHTML =
 favorites.length;
@@ -49,9 +47,10 @@ updateTotal();
 
 }
 
+let total = 0;
+
 function updateTotal(){
 
-let total = 0;
 
 favorites.forEach(product=>{
 

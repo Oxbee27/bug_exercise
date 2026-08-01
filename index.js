@@ -1,8 +1,8 @@
-const container = document.getElementById("product");
+const container = document.getElementById("products");
 
-const search = document.getElementById("Search");
+const search = document.getElementById("search");
 
-const expensiveBtn = document.getElementById("expensive");
+const expensiveBtn = document.getElementById("expensiveBtn");
 
 
 
@@ -16,7 +16,7 @@ container.innerHTML += `
 
 <div class="card">
 
-<h2>${product.title}</h2>
+<h2>${product.name}</h2>
 
 <p>${product.price}</p>
 
@@ -33,6 +33,8 @@ Favorite
 }
 
 displayProducts(products);
+
+
 let favorites = [];
 function favorite(id){
 
@@ -51,7 +53,6 @@ let total = 0;
 
 function updateTotal(){
 
-
 favorites.forEach(product=>{
 
 total = product.price;
@@ -65,22 +66,22 @@ total;
 
 search.addEventListener("keyup",function(){
 
-const keyword =
-this.value;
+const keyword = this.value.toLowerCase();
 
-const filtered =
-products.filter(product=>{
+const filtered = products.filter(product=>{
 
-return product.name.includes(keyword);
+return product.name.toLocaleLowerCase().includes(keyword);
 
 });
 
 });
+
+displayProducts(filtered);
+
 
 expensiveBtn.addEventListener("click",function(){
 
-const expensive =
-products.filter(product=>{
+const expensive = products.filter(product=>{
 
 return product.price < 500;
 

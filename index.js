@@ -1,11 +1,8 @@
-const container =
-document.getElementById("product");
+const container = document.getElementById("product");
 
-const search =
-document.getElementById("Search");
+const search = document.getElementById("Search");
 
-const expensiveBtn =
-document.getElementById("expensive");
+const expensiveBtn = document.getElementById("expensive");
 
 let favorites = [];
 

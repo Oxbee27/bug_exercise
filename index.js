@@ -6,7 +6,6 @@ const expensiveBtn = document.getElementById("expensive");
 
 let favorites = [];
 
-displayProducts(products);
 
 function displayProducts(items){
 
@@ -33,6 +32,9 @@ Favorite
 });
 
 }
+
+displayProducts(products);
+
 
 function favorite(id){
 

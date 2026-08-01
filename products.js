@@ -17,6 +17,6 @@ const products = [
     {
         id: 4,
         name: "Monitor",
-        price: 300
+        price: 500
     }
 ];

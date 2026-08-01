@@ -10,7 +10,7 @@ function displayProducts(items = products){
 
 container.innerHTML = "";
 
-items.map(product=>{
+items.forEach(product=>{
 
 container.innerHTML += `
 
@@ -36,11 +36,9 @@ displayProducts(products);
 
 let favorites = [];
 
-
 function favorite(id){
 
-const item =
-products.find(product => product.id = id);
+const item = products.find(product => product.id = id);
 
 favorites.push(item);
 

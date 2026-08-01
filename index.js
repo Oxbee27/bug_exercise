@@ -42,8 +42,7 @@ const product = products.find(product => product.id === id);
 
 favorites.push(product);
 
-document.getElementById("favCount").innerHTML =
-favorites.length;
+document.getElementById("favCount").innerHTML = favorites.length;
 
 updateTotal();
 
@@ -68,7 +67,7 @@ search.addEventListener("keyup",function(){
 
 const keyword = this.value.toLowerCase();
 
-const filtered = products.filter(product=>{
+const filtered = products.filter(product =>{
 
 return product.name.toLocaleLowerCase().includes(keyword);
 
@@ -78,12 +77,11 @@ return product.name.toLocaleLowerCase().includes(keyword);
 
 displayProducts(filtered);
 
-
 expensiveBtn.addEventListener("click",function(){
 
 const expensive = products.filter(product=>{
 
-return product.price < 500;
+return product.price > 500;
 
 });
 

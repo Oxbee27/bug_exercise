@@ -1,3 +1,5 @@
+
+
 const container = document.getElementById("products");
 
 const search = document.getElementById("search");
@@ -39,6 +41,10 @@ let favorites = [];
 function favorite(id){
 
 const product = products.find(product => product.id === id);
+if(!product){
+return
+
+}
 
 favorites.push(product);
 
@@ -48,15 +54,14 @@ updateTotal();
 
 }
 
-let total = 0;
+// let total = 0;
 
 function updateTotal(){
 
-favorites.forEach(product=>{
+ let total = favorites.reduce((acc, product) => {
+  return acc + product.price;
+}, 0);
 
-total = product.price;
-
-});
 
 document.getElementById("total").innerHTML =
 total;
@@ -69,13 +74,13 @@ const keyword = this.value.toLowerCase();
 
 const filtered = products.filter(product =>{
 
-return product.name.toLocaleLowerCase().includes(keyword);
+return product.name.toLowerCase().includes(keyword);
 
 });
-
-});
-
 displayProducts(filtered);
+
+});
+
 
 expensiveBtn.addEventListener("click",function(){
 
